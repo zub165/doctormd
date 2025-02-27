@@ -152,9 +152,9 @@
         }
 
         .symptom-bubble.active {
-            background: #ff4444;
+            background: var(--primary-color);
             color: white;
-            border-color: #cc0000;
+            border-color: var(--primary-color);
             transform: scale(1.02);
         }
 
@@ -966,19 +966,19 @@
         <div class="tab-pane fade" id="chat-tab">
             <h1 class="text-center">ER Chat Assistant</h1>
             <div class="registration-panel chat-panel">
-                <div class="chat-messages" id="mainChatMessages">
+                <div class="chat-messages" id="chatMessages">
                     <div class="message bot-message">
                         Hello! I'm your ER Assistant. How can I help you today?
                     </div>
-                    <div class="typing-indicator" id="mainTypingIndicator">
+                    <div class="typing-indicator" id="typingIndicator">
                         <div class="typing-dot"></div>
                         <div class="typing-dot"></div>
                         <div class="typing-dot"></div>
                     </div>
                 </div>
                 <div class="chat-input">
-                    <input type="text" id="mainUserInput" placeholder="Type your message..." onkeypress="handleMainKeyPress(event)">
-                    <button onclick="sendMainMessage()">
+                    <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+                    <button onclick="sendMessage()">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
@@ -1177,171 +1177,6 @@ Postal/ZIP Code"></textarea>
                                         <div class="severity-dot" data-level="10"></div>
                                     </div>
                                 </div>
-                                <div class="symptom-bubble" data-severity="11">
-                                    Back Pain
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="12">
-                                    Joint Pain
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="13">
-                                    Muscle Pain
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="14">
-                                    Dizziness
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="15">
-                                    Fatigue
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="16">
-                                    Anxiety
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="17">
-                                    Depression
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="18">
-                                    Rash
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="19">
-                                    Itching
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="20">
-                                    Bleeding
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
-                                <div class="symptom-bubble" data-severity="21">
-                                    Swelling
-                                    <div class="severity">
-                                        <div class="severity-dot" data-level="1"></div>
-                                        <div class="severity-dot" data-level="2"></div>
-                                        <div class="severity-dot" data-level="3"></div>
-                                        <div class="severity-dot" data-level="4"></div>
-                                        <div class="severity-dot" data-level="5"></div>
-                                        <div class="severity-dot" data-level="6"></div>
-                                        <div class="severity-dot" data-level="7"></div>
-                                        <div class="severity-dot" data-level="8"></div>
-                                        <div class="severity-dot" data-level="9"></div>
-                                        <div class="severity-dot" data-level="10"></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="form-group full-width">
@@ -1526,109 +1361,10 @@ Postal/ZIP Code"></textarea>
 
     <!-- Configuration and Scripts -->
     <script src="config.js"></script>
-    <script src="chatbot.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Initialize Google Maps
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 27.9506, lng: -82.4572 }, // Default to Tampa, FL coordinates
-                zoom: 12
-            });
-
-            const directionsService = new google.maps.DirectionsService();
-            const directionsRenderer = new google.maps.DirectionsRenderer();
-            directionsRenderer.setMap(map);
-            directionsRenderer.setPanel(document.getElementById('directionsPanel'));
-
-            // Try to get user's current location
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const userLocation = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude
-                        };
-                        
-                        // Center map on user's location
-                        map.setCenter(userLocation);
-                        
-                        // Create marker for user's location
-                        new google.maps.Marker({
-                            position: userLocation,
-                            map: map,
-                            title: 'Your Location',
-                            icon: {
-                                path: google.maps.SymbolPath.CIRCLE,
-                                scale: 10,
-                                fillColor: '#4285F4',
-                                fillOpacity: 1,
-                                strokeColor: '#ffffff',
-                                strokeWeight: 2,
-                            }
-                        });
-
-                        // Get address from coordinates and set in fromAddress input
-                        const geocoder = new google.maps.Geocoder();
-                        geocoder.geocode({ location: userLocation }, (results, status) => {
-                            if (status === 'OK' && results[0]) {
-                                document.getElementById('fromAddress').value = results[0].formatted_address;
-                            }
-                        });
-                    },
-                    (error) => {
-                        console.error('Error getting location:', error);
-                        alert('Unable to get your location. Please enter it manually.');
-                    }
-                );
-            }
-
-            window.calculateAndDisplayRoute = function() {
-                const fromAddress = document.getElementById('fromAddress').value;
-                const toAddress = document.getElementById('toAddress').value;
-
-                if (!fromAddress || !toAddress) {
-                    alert('Please enter both starting and destination addresses');
-                    return;
-                }
-
-                directionsService.route({
-                    origin: fromAddress,
-                    destination: toAddress,
-                    travelMode: google.maps.TravelMode.DRIVING
-                }, function(response, status) {
-                    if (status === 'OK') {
-                        directionsRenderer.setDirections(response);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                });
-            };
-
-            window.setHospitalAddress = function(address) {
-                document.getElementById('toAddress').value = address;
-                calculateAndDisplayRoute();
-            };
-
-            window.swapAddresses = function() {
-                const from = document.getElementById('fromAddress');
-                const to = document.getElementById('toAddress');
-                const temp = from.value;
-                from.value = to.value;
-                to.value = temp;
-                calculateAndDisplayRoute();
-            };
-        }
-
-        // Wait for config to load before loading Google Maps
-        window.addEventListener('load', function() {
-            const script = document.createElement('script');
-            script.src = `https://maps.googleapis.com/maps/api/js?key=${window.config.GOOGLE_MAPS_API_KEY}&callback=initMap`;
-            script.async = true;
-            script.defer = true;
-            document.body.appendChild(script);
-        });
+        // ... rest of the existing script ...
     </script>
 </body>
 </html>

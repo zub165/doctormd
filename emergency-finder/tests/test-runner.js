@@ -1,7 +1,7 @@
-const { EmergencyFinderTestSuite } = require('../js/main.js');
+const { EmergencyFinderTestSuite } = require("../js/main.js");
 
 async function runTests() {
-    console.log('🏥 Starting Emergency Finder Tests...\n');
+    console.log("🏥 Starting Emergency Finder Tests...\n");
     
     const testSuite = new EmergencyFinderTestSuite();
     
@@ -12,11 +12,11 @@ async function runTests() {
         await testSuite.testSeverityScale();
         await testSuite.testMapFunctionality();
         
-        console.log('\n✅ All tests completed successfully!');
+        console.log("\n✅ All tests completed successfully!");
     } catch (error) {
-        console.error('\n❌ Test failed:', error);
+        console.error("\n❌ Test failed:", error);
         process.exit(1);
     }
 }
 
-runTests(); 
+runTests();
